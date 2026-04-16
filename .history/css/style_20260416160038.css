@@ -3,6 +3,7 @@
    Design System & Custom Styles
    ================================================ */
 
+/* ---------- CSS Variables (Design Tokens) ---------- */
 :root {
   --primary:        #1a365d;
   --primary-mid:    #2c5282;

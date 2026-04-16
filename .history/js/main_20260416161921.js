@@ -6,12 +6,12 @@
 
 /* ---------- Section Loader ---------- */
 const sections = [
-  { id: 'navbar-placeholder',     src: '../sections/navbar.html'     },
-  { id: 'hero-placeholder',       src: '../sections/hero.html'       },
-  { id: 'about-placeholder',      src: '../sections/about.html'      },
-  { id: 'experience-placeholder', src: '../sections/experience.html' },
-  { id: 'skills-placeholder',     src: '../sections/skills.html'     },
-  { id: 'contact-placeholder',    src: '../sections/contact.html'    },
+  { id: 'navbar-placeholder',     src: '.'     },
+  { id: 'hero-placeholder',       src: '/sections/hero.html'       },
+  { id: 'about-placeholder',      src: '/sections/about.html'      },
+  { id: 'experience-placeholder', src: '/sections/experience.html' },
+  { id: 'skills-placeholder',     src: '/sections/skills.html'     },
+  { id: 'contact-placeholder',    src: '/sections/contact.html'    },
 ];
 
 async function loadSection({ id, src }) {
