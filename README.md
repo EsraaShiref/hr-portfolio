@@ -21,21 +21,22 @@ hr-portfolio/
 │   └── style.css
 ├── js/
 │   └── main.js
-├── sections/
-│   ├── navbar.html
-│   ├── hero.html
-│   ├── about.html
-│   ├── experience.html
-│   ├── skills.html
-│   └── contact.html
-├── assets/
-│   └── images/
-│       └── profile.jpeg
+├── public/
+│   ├── sections/
+│   │   ├── navbar.html
+│   │   ├── hero.html
+│   │   ├── about.html
+│   │   ├── experience.html
+│   │   ├── skills.html
+│   │   └── contact.html
+│   └── assets/
+│       └── images/
+│           └── profile.jpeg
 ├── dist/              ← production build (auto-generated)
+├── vite.config.js
 ├── package.json
 └── README.md
 ```
-
 ---
 
 ## Getting Started
@@ -63,14 +64,13 @@ hr-portfolio/
 
 ## Build for Production
 npm run build
-
 Output will be in the `dist/` folder.
 
 ---
 
-## Deployment (GitHub Pages)
-npm run build
-npm run deploy
+## Deployment
+Deployed on Netlify:
+https://radwa-nabih.netlify.app
 
 ---
 
