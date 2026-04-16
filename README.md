@@ -14,6 +14,7 @@ for an HR / Administrative professional.
 ---
 
 ## Project Structure
+```
 hr-portfolio/
 ├── index.html
 ├── css/
@@ -33,6 +34,7 @@ hr-portfolio/
 ├── dist/              ← production build (auto-generated)
 ├── package.json
 └── README.md
+```
 
 ---
 
