@@ -40,6 +40,7 @@ The website is built using HTML5, CSS3, and Bootstrap 5, focusing on simplicity,
 
 ## Project Structure
 
+```
 hr-portfolio/
 │
 ├── index.html
@@ -64,6 +65,8 @@ hr-portfolio/
 │   └── contact.html
 │
 └── README.md
+```
+
 
 ---
 
