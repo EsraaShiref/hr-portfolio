@@ -6,19 +6,19 @@
 
 /* ---------- Section Loader ---------- */
 const sections = [
-  { id: 'navbar-placeholder', src: 'sections/navbar.html' },
-  { id: 'hero-placeholder', src: 'sections/hero.html' },
-  { id: 'about-placeholder', src: 'sections/about.html' },
+  { id: 'navbar-placeholder',     src: 'sections/navbar.html'     },
+  { id: 'hero-placeholder',       src: 'sections/hero.html'       },
+  { id: 'about-placeholder',      src: 'sections/about.html'      },
   { id: 'experience-placeholder', src: 'sections/experience.html' },
-  { id: 'skills-placeholder', src: 'sections/skills.html' },
-  { id: 'contact-placeholder', src: 'sections/contact.html' },
+  { id: 'skills-placeholder',     src: 'sections/skills.html'     },
+  { id: 'contact-placeholder',    src: 'sections/contact.html'    },
 ];
 
 async function loadSection({ id, src }) {
   const placeholder = document.getElementById(id);
   if (!placeholder) return;
   try {
-    const res = await fetch(src);
+    const res  = await fetch(src);
     const html = await res.text();
     placeholder.innerHTML = html;
   } catch {
@@ -86,7 +86,7 @@ function initSmoothScroll() {
 /* ---------- Active Nav Scroll Spy ---------- */
 function initScrollSpy() {
   const navLinks = document.querySelectorAll('#mainNav .nav-link[href^="#"]');
-  const targets = Array.from(navLinks)
+  const targets  = Array.from(navLinks)
     .map(l => document.querySelector(l.getAttribute('href')))
     .filter(Boolean);
 
@@ -140,15 +140,15 @@ function initCounters() {
     entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
-        const el = entry.target;
+        const el     = entry.target;
         const target = parseFloat(el.dataset.count);
         const suffix = el.dataset.suffix || '';
         const duration = 1600;
-        const start = performance.now();
+        const start  = performance.now();
 
         function step(now) {
           const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
+          const eased    = 1 - Math.pow(1 - progress, 3);
           el.textContent = Math.round(eased * target) + suffix;
           if (progress < 1) requestAnimationFrame(step);
         }
@@ -196,7 +196,7 @@ function initTyped() {
       el.textContent = word.slice(0, charIndex);
       if (charIndex === 0) {
         isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
+        wordIndex  = (wordIndex + 1) % words.length;
       }
     }
 
@@ -207,24 +207,6 @@ function initTyped() {
 }
 
 
-
-
-function sendMsg() {
-  const name = document.getElementById('waName').value.trim();
-  const email = document.getElementById('waEmail').value.trim();
-  const msg = document.getElementById('waMsg').value.trim();
-  if (!name || !msg) { alert('Please fill in your name and message.'); return; }
-
-  document.getElementById('waForm').style.display = 'none';
-  document.getElementById('waTyping').style.display = 'block';
-
-  setTimeout(() => {
-    document.getElementById('waTyping').style.display = 'none';
-    const text = encodeURIComponent(`Hi Radwa! I'm ${name} (${email}).\n\n${msg}`);
-    window.open(`https://wa.me/201141667376?text=${text}`, '_blank');
-  }, 1500);
-}
-
 /* ---------- Contact Form ---------- */
 function initContactForm() {
   const form = document.getElementById('contactForm');
@@ -232,7 +214,7 @@ function initContactForm() {
 
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const btn = form.querySelector('.btn-submit');
+    const btn     = form.querySelector('.btn-submit');
     const success = document.getElementById('formSuccess');
 
     btn.disabled = true;
