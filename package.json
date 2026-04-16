@@ -1,0 +1,26 @@
+{
+  "name": "hr-portfolio",
+  "version": "1.0.0",
+  "description": "This project is a clean, modern, and fully responsive personal portfolio website...",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EsraaShiref/hr-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/EsraaShiref/hr-portfolio/issues"
+  },
+  "homepage": "https://github.com/EsraaShiref/hr-portfolio#readme",
+  "devDependencies": {
+    "vite": "^8.0.8"
+  }
+}
