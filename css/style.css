@@ -642,7 +642,6 @@ img {
 
 @media (min-width: 576px) {
   .hero-actions {
-    gap: var(--space-lg);
     justify-content: center;
   }
 }
