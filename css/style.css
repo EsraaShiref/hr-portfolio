@@ -1979,3 +1979,28 @@ textarea.form-control {
     text-decoration: underline;
   }
 }
+
+
+/* تحسين وضع الموبايل: الصورة تظهر قبل النص */
+@media (max-width: 991.98px) {
+  .hero-grid {
+    display: flex; /* تحويل الشبكة إلى فليكس */
+    flex-direction: column-reverse; /* عكس الترتيب: الصورة (التي كانت ثانية) تصبح أولاً */
+    text-align: center;
+    gap: 30px;
+  }
+
+  .profile-wrapper {
+    margin: 0 auto; /* توسيط الصورة في المنتصف */
+    width: 240px;   /* حجم مناسب للموبايل */
+    height: 240px;
+  }
+
+  /* إخفاء البادجات العائمة إذا كانت تسبب خروج عن حدود الشاشة في الموبايل الصغير */
+  .profile-badge {
+    position: relative;
+    display: inline-flex;
+    margin: 10px 5px;
+    inset: auto !important; /* إلغاء التموضع القديم */
+  }
+}
