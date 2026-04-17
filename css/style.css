@@ -279,7 +279,7 @@ img {
   padding: 18px 0;
   z-index: 1050;
   transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
-  width: 100%;
+  width: 100vw;
 }
 
 /* Desktop — start transparent, fill on scroll */
