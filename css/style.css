@@ -623,7 +623,7 @@ img {
   }
 }
 
-/* Summary
+Summary
 .hero-summary {
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.72);
@@ -638,46 +638,8 @@ img {
   }
 
   .hero-name br {
-    display: none;
+    display: block;
   }
-} */
-
-
-.hero-summary {
-  max-width: 90%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.hero-summary p {
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 8px;
-  color: #dbeafe; /* حسب لون موقعك */
-}
-
-/* Tablet */
-@media (min-width: 576px) {
-  .hero-summary p {
-    font-size: 15px;
-  }
-}
-
-/* Desktop */
-@media (min-width: 992px) {
-  .hero-summary {
-    max-width: 600px;
-    text-align: left;
-  }
-
-  .hero-summary p {
-    font-size: 16px;
-  }
-}
-
-.hero-summary p::before {
-  content: "• ";
-  color: #60a5fa;
 }
 
 /* CTA buttons — stacked on mobile, row on desktop */
