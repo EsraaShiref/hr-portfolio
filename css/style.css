@@ -504,7 +504,7 @@ img {
   flex-direction: column;
   gap: var(--space-xl);
   width: 100%;
-  /* padding-top: 70px; */
+  padding-top: 70px;
 }
 
 /* Profile card above text on mobile */
@@ -552,7 +552,7 @@ img {
 @media (min-width: 768px) {
   .hero-content {
     text-align: left;
-    padding-top: 70px;
+    /* padding-top: 70px; */
   }
 }
 
