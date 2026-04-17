@@ -546,7 +546,6 @@ img {
 /* Hero text */
 .hero-content {
   text-align: center;
-  padding-top: 60px;
 }
 
 @media (min-width: 768px) {
