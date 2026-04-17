@@ -581,6 +581,10 @@ img {
   }
 }
 
+.hero-name br {
+  display: none;
+}
+
 /* Name */
 .hero-name {
   font-size: clamp(2rem, 6vw, 3.8rem);
@@ -632,6 +636,10 @@ img {
   .hero-summary {
     font-size: 0.9rem;
     max-width: 520px;
+  }
+
+  .hero-name br {
+    display: none;
   }
 }
 
