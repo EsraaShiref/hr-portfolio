@@ -620,6 +620,9 @@ img {
   color: rgba(255, 255, 255, 0.72);
   line-height: 1.7;
   margin-bottom: var(--space-lg);
+  text-align: justify;
+  text-justify: inter-word;
+  padding: 0px 40px;
 }
 
 @media (min-width: 768px) {
@@ -1992,7 +1995,7 @@ textarea.form-control {
    ================================================ */
 
 
-   @media (max-width: 767.98px) {
+@media (max-width: 767.98px) {
 
   button,
   .btn,
