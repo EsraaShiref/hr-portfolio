@@ -69,8 +69,8 @@ Output will be in the `dist/` folder.
 ---
 
 ## Deployment
-Deployed on Netlify:
-https://radwa-nabih.netlify.app
+Deployed on Vercel:
+https://radwa-nabeh.vercel.app/
 
 ---
 
