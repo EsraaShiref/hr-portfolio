@@ -153,6 +153,9 @@ img { max-width: 100%; height: auto; }
   transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
   padding: 18px 0;
   z-index: 1050;
+  position: fixed; 
+  top: 0;
+  width: 100%;
 }
 
 #mainNav.scrolled {
@@ -1180,11 +1183,13 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   }
   .hero-grid {
     display: flex;
-    flex-direction: column-reverse; 
-    gap: 30px;
+    flex-direction: column-reverse; /* الصورة فوق الكلام أو العكس حسب تفضيلك */
+    text-align: center;
+    gap: 20px;
   }
-  
+
   .hero-name {
+    font-size: 1.8rem; 
     margin-top: 20px;
   }
 
@@ -1260,5 +1265,13 @@ textarea.form-control { resize: vertical; min-height: 140px; }
     height: 180px;
   }
 
-  
+  /* بدلاً من إخفائهم، نضعهم بجانب بعض تحت الصورة */
+  .profile-badge {
+    position: static;
+    animation: none;
+    display: inline-flex;
+    margin: 10px 5px;
+    padding: 8px 12px;
+    box-shadow: var(--shadow-sm);
+  }
 }
