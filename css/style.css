@@ -917,7 +917,7 @@ img {
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .hero-scroll {
     display: flex;
     position: absolute;
