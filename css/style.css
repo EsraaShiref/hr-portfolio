@@ -106,14 +106,12 @@ html {
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-size: 0.9375rem;
-  /* 15px base for better readability */
   line-height: 1.65;
   color: var(--text-dark);
   background: var(--bg-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  /* Single source of truth — NOT repeated on children */
 }
 
 /* Fluid heading scale */
@@ -150,7 +148,6 @@ a {
   transition: color var(--transition);
 }
 
-/* Touch targets — WCAG 2.5.5 (44×44 px minimum) */
 button,
 .btn,
 .nav-link,
@@ -176,7 +173,6 @@ img {
    3. UTILITY CLASSES
    ================================================ */
 
-/* Section vertical rhythm — mobile first */
 .section-padding {
   padding: var(--space-xl) 0;
 }
@@ -215,7 +211,6 @@ img {
   margin-bottom: var(--space-sm);
 }
 
-/* Decorative rule beneath section headers */
 .section-divider {
   width: 48px;
   height: 4px;
@@ -335,8 +330,6 @@ img {
    5. NAVBAR
    ================================================ */
 
-/* FIX: Unclosed comment on line 1 of original file repaired.
-   FIX: Misindented @media block for .scrolled corrected. */
 #mainNav {
   background: var(--primary);
   padding: 18px 0;
@@ -489,7 +482,6 @@ img {
   align-items: center;
   overflow: hidden;
   padding: 80px 0 60px;
-  /* top offset clears fixed navbar on mobile */
 }
 
 @media (min-width: 768px) {
@@ -498,7 +490,6 @@ img {
   }
 }
 
-/* Hero grid — column on mobile, row at 768, named grid at 992 */
 .hero-grid {
   display: flex;
   flex-direction: column;
@@ -642,7 +633,6 @@ img {
   }
 }
 
-/* CTA buttons — stacked on mobile, row on desktop */
 .hero-actions {
   display: flex;
   flex-direction: column;
@@ -758,7 +748,6 @@ img {
   align-items: center;
 }
 
-/* FIX: Single authoritative .profile-wrapper — removed duplicate block */
 .profile-wrapper {
   position: relative;
   width: 240px;
@@ -779,7 +768,6 @@ img {
   }
 }
 
-/* Decorative rings — removed redundant commented-out duplicate blocks */
 .profile-ring {
   display: block;
   position: absolute;
@@ -878,9 +866,7 @@ img {
   }
 }
 
-/* FIX: .profile-badge-num / label / icon defined once at their correct
-   sizes — the undersized inner-media values (0.35rem label, font-weight:300)
-   are removed; the outer declarations below are the single source of truth. */
+
 .profile-badge-num {
   font-size: 1.4rem;
   font-weight: 800;
@@ -1047,7 +1033,6 @@ img {
   box-shadow: 0 8px 20px rgba(49, 130, 206, 0.4);
 }
 
-/* Stats row — auto-fit prevents cramping on 320px screens */
 .stats-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
@@ -1101,7 +1086,6 @@ img {
   }
 }
 
-/* Decorative circles — hidden on mobile for performance */
 .education-card::before,
 .education-card::after {
   display: none;
@@ -1260,7 +1244,6 @@ img {
   background: var(--bg-light);
 }
 
-/* Vertical timeline rule */
 .timeline {
   position: relative;
 }
@@ -1623,7 +1606,7 @@ img {
   border-color: var(--accent-border);
 }
 
-/* Attributes grid — 1 → 2 → 4 columns */
+
 .attributes-row {
   display: grid;
   grid-template-columns: 1fr;
@@ -1715,7 +1698,7 @@ img {
   }
 }
 
-/* Decorative circle — hidden on mobile */
+
 .contact-info-card::before {
   display: none;
 }
@@ -1811,7 +1794,6 @@ img {
   font-weight: 500;
   color: #fff;
   word-break: break-word;
-  /* long emails / URLs won't overflow */
 }
 
 @media (min-width: 768px) {
@@ -1829,7 +1811,7 @@ img {
   color: #fff;
 }
 
-/* Social row */
+
 .contact-social {
   display: flex;
   gap: var(--space-sm);
@@ -1838,7 +1820,7 @@ img {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* FIX: Removed redundant min-height — width/height already enforce 44px */
+
 .social-btn {
   width: 44px;
   height: 44px;
@@ -1864,7 +1846,7 @@ img {
   transform: translateY(-3px);
 }
 
-/* Contact form card */
+
 .contact-form-card {
   background: var(--bg-white);
   border-radius: var(--radius-xl);
@@ -1897,12 +1879,11 @@ img {
   transition: border-color var(--transition), box-shadow var(--transition);
   width: 100%;
   min-height: 44px;
-  /* Ensure consistent appearance across browsers */
   -webkit-appearance: none;
   appearance: none;
 }
 
-/* FIX: font-size ≥ 16px prevents auto-zoom on iOS Safari */
+
 @media (max-width: 767.98px) {
 
   .form-control,
@@ -2010,8 +1991,8 @@ textarea.form-control {
    12. GLOBAL RESPONSIVE HELPERS
    ================================================ */
 
-/* Touch target enforcement on mobile browsers */
-@media (max-width: 767.98px) {
+
+   @media (max-width: 767.98px) {
 
   button,
   .btn,
@@ -2021,7 +2002,7 @@ textarea.form-control {
     min-height: 44px;
   }
 
-  /* Breathing room between stacked columns */
+
   .row>[class*="col-"] {
     margin-bottom: var(--space-md);
   }
