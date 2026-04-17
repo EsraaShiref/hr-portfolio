@@ -1260,13 +1260,5 @@ textarea.form-control { resize: vertical; min-height: 140px; }
     height: 180px;
   }
 
-  /* بدلاً من إخفائهم، نضعهم بجانب بعض تحت الصورة */
-  .profile-badge {
-    position: static;
-    animation: none;
-    display: inline-flex;
-    margin: 10px 5px;
-    padding: 8px 12px;
-    box-shadow: var(--shadow-sm);
-  }
+  
 }
