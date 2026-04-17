@@ -1269,7 +1269,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   .profile-badge {
     position: static;
     animation: none;
-    display: inline-flex;
+    display: none;
     margin: 10px 5px;
     padding: 8px 12px;
     box-shadow: var(--shadow-sm);
