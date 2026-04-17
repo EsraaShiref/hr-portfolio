@@ -318,7 +318,7 @@ img {
 #mainNav {
   background: var(--primary);
   transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
-  padding: 10px 0;
+  /* padding: 10px 0; */
   z-index: 1050;
 }
 
