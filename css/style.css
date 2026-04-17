@@ -93,13 +93,13 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-height);
-  overflow-x: hidden; 
+  overflow-x: hidden; /* على body لوحده مش كافي في بعض mobile browsers */
   max-width: 100%;
 }
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-size: 0.9375rem; /* 15px base for better readability */
+  font-size: 0.9375rem; /* 15px — comfortable on small screens */
   line-height: 1.65;
   color: var(--text-dark);
   background: var(--bg-white);
@@ -427,63 +427,72 @@ img {
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: 80px 0 60px; /* top offset clears fixed navbar on mobile */
+  padding: 80px 0 60px;
 }
 
 @media (min-width: 768px) {
   #home {
-    padding: 0;
+    padding: 100px 0 80px; /* FIX: padding كافي على التابلت يفصل عن الـ navbar */
   }
 }
 
-/* Hero grid — column on mobile, row at 768, named grid at 992 */
+@media (min-width: 992px) {
+  #home {
+    padding: 0; /* على الديسكتوب الـ flexbox align-items:center يكفي */
+  }
+}
+
+/* Hero grid — محور واحد على الموبايل، جنباً لجنب من 768px */
 .hero-grid {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
-  width: 100%; 
+  align-items: center;
+  gap: var(--space-lg);
+  width: 100%; /* FIX: منع الـ overflow اليميني */
 }
 
-/* Profile card above text on mobile */
+/* الصورة فوق النص على الموبايل */
 .hero-grid .hero-profile-card { order: 1; }
 .hero-grid .hero-content       { order: 2; }
 
+/* ── التابلت (768–991px): جنباً لجنب بنسب واضحة ── */
 @media (min-width: 768px) {
   .hero-grid {
     flex-direction: row;
     align-items: center;
-    gap: var(--space-lg);
+    justify-content: center;
+    gap: var(--space-xl);
   }
 
   .hero-grid .hero-content {
     order: 1;
-    flex: 1;
+    flex: 1 1 0;          /* FIX: يأخذ المساحة المتاحة بدون overflow */
+    min-width: 0;         /* FIX: يمنع الـ text من تجاوز الـ flex container */
+    text-align: left;
   }
 
   .hero-grid .hero-profile-card {
     order: 2;
-    flex: 0 0 auto;
+    flex: 0 0 300px;      /* FIX: عرض ثابت واضح على التابلت */
   }
 }
 
+/* ── الديسكتوب (992px+): CSS Grid متساوي ── */
 @media (min-width: 992px) {
   .hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 56px;
-    padding: 0;
+    align-items: center;
   }
+
+  .hero-grid .hero-content      { order: 1; }
+  .hero-grid .hero-profile-card { order: 2; }
 }
 
-/* Hero text */
+/* Hero text — centred on mobile, right from 768px onwards (set in grid block above) */
 .hero-content {
   text-align: center;
-}
-
-@media (min-width: 768px) {
-  .hero-content {
-    text-align: left;
-  }
 }
 
 /* Available badge */
@@ -571,6 +580,13 @@ img {
   }
 }
 
+/* FIX: من 768px النص بقى left-aligned فلازم الأزرار تتمشى معاه */
+@media (min-width: 768px) {
+  .hero-actions {
+    justify-content: flex-start;
+  }
+}
+
 @media (min-width: 992px) {
   .hero-actions {
     justify-content: flex-start;
@@ -638,9 +654,17 @@ img {
   border-top: 1px solid rgba(255,255,255,0.12);
 }
 
-@media (min-width: 992px) {
+/* FIX: من 768px النص left-aligned فالـ meta يتمشى معاه */
+@media (min-width: 768px) {
   .hero-meta {
     justify-content: flex-start;
+    margin-top: 32px;
+    padding-top: 24px;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-meta {
     margin-top: 40px;
     padding-top: 32px;
   }
@@ -675,21 +699,29 @@ img {
 /* FIX: Single authoritative .profile-wrapper — removed duplicate block */
 .profile-wrapper {
   position: relative;
-  width: 240px;
-  height: 240px;
+  width: 220px;
+  height: 220px;
 }
 
 @media (min-width: 576px) {
+  .profile-wrapper {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* FIX: على التابلت الصورة كانت كبيرة جداً وبتكسر الـ layout — قلّصناها */
   .profile-wrapper {
     width: 280px;
     height: 280px;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .profile-wrapper {
-    width: 320px;
-    height: 320px;
+    width: 340px;
+    height: 340px;
   }
 }
 
@@ -767,23 +799,41 @@ img {
     position: absolute;
     background: var(--bg-white);
     border-radius: var(--radius-md);
-    padding: 10px 16px;
+    padding: 8px 12px;      /* FIX: أصغر قليلاً على التابلت */
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     box-shadow: var(--shadow-lg);
     animation: float 3s ease-in-out infinite;
+    z-index: 10;
+  }
+
+  /* FIX: مواضع أقرب على التابلت بدل ما يطلعوا برا الـ wrapper */
+  .profile-badge.badge-years {
+    top: 0;
+    left: -16px;
+    animation-delay: 0s;
+  }
+
+  .profile-badge.badge-achieve {
+    bottom: 10px;
+    right: -16px;
+    animation-delay: 1.5s;
+  }
+}
+
+@media (min-width: 992px) {
+  .profile-badge {
+    padding: 10px 16px;
   }
 
   .profile-badge.badge-years {
     top: 10px;
     left: -24px;
-    animation-delay: 0s;
   }
 
   .profile-badge.badge-achieve {
     bottom: 20px;
     right: -24px;
-    animation-delay: 1.5s;
   }
 }
 
