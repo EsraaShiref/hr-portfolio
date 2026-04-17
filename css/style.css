@@ -384,6 +384,10 @@ img {
    HERO SECTION - Mobile-First
    ================================================ */
 
+/* ================================================
+   HERO SECTION - Mobile-First (Image First)
+   ================================================ */
+
 #home {
   min-height: 100vh;
   background: linear-gradient(135deg, #0f2942 0%, #1a365d 40%, #2b6cb0 80%, #3182ce 100%);
@@ -400,45 +404,20 @@ img {
   }
 }
 
-/* Decorative shapes - hidden on mobile for performance */
-#home::before,
-#home::after {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  #home::before {
-    display: block;
-    content: '';
-    position: absolute;
-    top: -80px;
-    right: -80px;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.04);
-    pointer-events: none;
-  }
-  
-  #home::after {
-    display: block;
-    content: '';
-    position: absolute;
-    bottom: -120px;
-    left: -60px;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.03);
-    pointer-events: none;
-  }
-}
-
-/* Mobile-first grid - single column */
+/* Mobile-first grid - single column with image FIRST */
 .hero-grid {
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
+}
+
+/* IMPORTANT: On mobile, image comes FIRST */
+.hero-grid .hero-profile-card {
+  order: 1;
+}
+
+.hero-grid .hero-content {
+  order: 2;
 }
 
 @media (min-width: 992px) {
@@ -448,9 +427,18 @@ img {
     gap: 56px;
     align-items: center;
   }
+  
+  /* On desktop, reset order to normal (content then image) */
+  .hero-grid .hero-profile-card {
+    order: 2;
+  }
+  
+  .hero-grid .hero-content {
+    order: 1;
+  }
 }
 
-/* Hero content - centered on mobile */
+/* Rest of the hero styles remain the same */
 .hero-content {
   text-align: center;
 }
@@ -461,27 +449,33 @@ img {
   }
 }
 
-.hero-badge {
-  display: inline-flex;
+/* Profile card styles (unchanged) */
+.hero-profile-card {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
-  margin-bottom: var(--space-md);
-  backdrop-filter: blur(8px);
+}
+
+.profile-wrapper {
+  position: relative;
+  width: 240px;
+  height: 240px;
+}
+
+@media (min-width: 576px) {
+  .profile-wrapper {
+    width: 280px;
+    height: 280px;
+  }
 }
 
 @media (min-width: 768px) {
-  .hero-badge {
-    font-size: 0.8rem;
-    padding: 6px 16px;
+  .profile-wrapper {
+    width: 320px;
+    height: 320px;
   }
 }
+
 
 .hero-name {
   font-size: clamp(2rem, 6vw, 3.8rem);
