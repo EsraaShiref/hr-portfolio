@@ -521,6 +521,7 @@ img {
     flex-direction: row;
     align-items: center;
     gap: var(--space-lg);
+    padding-top: 70px;
   }
 
   .hero-grid .hero-content {
