@@ -46,7 +46,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 70px;
+  scroll-padding-top: 85px;
 }
 
 body {
@@ -222,6 +222,7 @@ img { max-width: 100%; height: auto; }
   display: flex;
   align-items: center;
   overflow: hidden;
+  padding-top: 100px;
 }
 
 /* Decorative background shapes */
@@ -1174,14 +1175,31 @@ textarea.form-control { resize: vertical; min-height: 140px; }
    RESPONSIVE
    ================================================ */
 @media (max-width: 991.98px) {
+  #home {
+    padding-top: 80px; 
+  }
   .hero-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 48px;
+    display: flex;
+    flex-direction: column-reverse; 
+    gap: 30px;
+  }
+  
+  .hero-name {
+    margin-top: 20px;
+  }
+
+  .hero-actions {
+    flex-direction: column; 
+    width: 100%;
+  }
+
+  .btn-hero-primary, .btn-hero-outline {
+    width: 100%;
+    justify-content: center;
   }
 
   .hero-summary { max-width: 100%; }
-  .hero-actions { justify-content: center; }
+  /* .hero-actions { justify-content: center; } */
   .hero-meta    { justify-content: center; }
 
   .profile-wrapper { width: 260px; height: 260px; }
@@ -1199,10 +1217,26 @@ textarea.form-control { resize: vertical; min-height: 140px; }
 }
 
 @media (max-width: 767.98px) {
-  .section-padding    { padding: 64px 0; }
+  /* .section-padding    { padding: 64px 0; } */
   .section-padding-sm { padding: 40px 0; }
 
-  .stats-row { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .section-padding { padding: 48px 0; }
+  .section-title { font-size: 1.8rem; }
+  
+  .section-divider { margin-bottom: 30px; }
+  /* .stats-row { grid-template-columns: repeat(3, 1fr); gap: 10px; } */
+  .stats-row {
+    grid-template-columns: 1fr; 
+    gap: 15px;
+  }
+  
+  .stat-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    text-align: left;
+  }
 
   .hero-name { font-size: 2.2rem; }
 
@@ -1215,9 +1249,24 @@ textarea.form-control { resize: vertical; min-height: 140px; }
 }
 
 @media (max-width: 575.98px) {
-  .profile-wrapper { width: 220px; height: 220px; }
-  .profile-avatar  { width: 220px; height: 220px; }
-  .profile-badge   { display: none; }
+  .profile-wrapper {
+    width: 180px; /* تصغير الصورة لتناسب الشاشات الصغيرة */
+    height: 180px;
+    margin: 0 auto;
+  }
 
-  .stats-row { grid-template-columns: 1fr 1fr; }
+  .profile-avatar {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* بدلاً من إخفائهم، نضعهم بجانب بعض تحت الصورة */
+  .profile-badge {
+    position: static;
+    animation: none;
+    display: inline-flex;
+    margin: 10px 5px;
+    padding: 8px 12px;
+    box-shadow: var(--shadow-sm);
+  }
 }
