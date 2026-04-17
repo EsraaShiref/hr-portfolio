@@ -2,18 +2,6 @@
    RADWA NABIH ALI – PORTFOLIO
    Mobile-First Refactored CSS
    ================================================
-   
-   IMPROVEMENTS MADE:
-   1. Mobile-first approach - base styles for mobile, expanded for larger screens
-   2. Added viewport meta handling in comments
-   3. Improved touch targets (min-height: 44px for interactive elements)
-   4. Better responsive typography with clamp()
-   5. Optimized spacing for all screen sizes
-   6. Enhanced navigation for mobile (improved hamburger menu)
-   7. Fixed overflow issues on small screens
-   8. Improved form elements for mobile
-   9. Better grid responsiveness
-   10. Optimized animations for reduced motion preference
 */
 
 /* ================================================
@@ -447,7 +435,7 @@ img {
   position: relative;
   display: flex;
   align-items: center;
-  overflow-x: hidden;
+  overflow: hidden;
   padding: 80px 0 60px;
 }
 
