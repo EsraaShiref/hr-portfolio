@@ -546,11 +546,13 @@ img {
 /* Hero text */
 .hero-content {
   text-align: center;
+  padding-top: 70px;
 }
 
 @media (min-width: 768px) {
   .hero-content {
     text-align: left;
+    padding-top: 70px;
   }
 }
 
