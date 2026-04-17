@@ -530,6 +530,7 @@ img {
   border-radius: var(--radius-full);
   margin-bottom: var(--space-md);
   backdrop-filter: blur(8px);
+  margin-top: 15px;
 }
 
 @media (min-width: 768px) {
